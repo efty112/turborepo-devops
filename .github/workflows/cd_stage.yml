@@ -23,7 +23,10 @@ jobs:
                 script: |
                   cd /home/ubuntu/${{ github.event.repository.name }}/
                   git pull
-                  echo "============== Pull Done"
+                  node -v
+                  npm -v
+                  npm install -g pnpm
+                  pnpm-v
                   pnpm install
                   echo "============== PNPM install Done"
                   pnpm run build
