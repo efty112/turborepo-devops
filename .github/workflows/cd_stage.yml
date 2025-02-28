@@ -23,6 +23,9 @@ jobs:
                 script: |
                   cd /home/ubuntu/${{ github.event.repository.name }}/
                   git pull
+                  echo "============== Pull Done"
                   pnpm install
+                  echo "============== PNPM install Done"
                   pnpm run build
+                  echo "============== PNPM build Done"
                   pm2 restart fe-server && pm2 restart http-server && pm2 restart ws-server 
