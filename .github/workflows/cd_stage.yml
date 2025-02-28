@@ -23,12 +23,7 @@ jobs:
                 script: |
                   cd /home/ubuntu/${{ github.event.repository.name }}/
                   git pull
-                  node -v
-                  npm -v
-                  npm install -g pnpm
-                  pnpm-v
-                  pnpm install
-                  echo "============== PNPM install Done"
-                  pnpm run build
-                  echo "============== PNPM build Done"
+                  sudo npm install -g pnpm
+                  pnpm -v
+                  pnpm install && pnpm run build
                   pm2 restart fe-server && pm2 restart http-server && pm2 restart ws-server 
