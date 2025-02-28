@@ -24,6 +24,9 @@ jobs:
                     ls
                     cd /home/ubuntu/turborepo-devops/
                     git pull origin main
+                    echo "====== Reached ========"
+                    ls
+                    echo "====== Reached ========"
                     pnpm install
                     pnpm run build
                     pm2 restart fe-server 
