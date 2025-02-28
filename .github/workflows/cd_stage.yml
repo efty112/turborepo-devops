@@ -25,9 +25,7 @@ jobs:
                     cd /home/ubuntu/turborepo-devops/
                     git pull origin main
                     ls
-                    npm install -g pnpm
-                    pnpm install
-                    pnpm run build
+                    npm install -g pnpm && pnpm install && pnpm run build
                     pm2 restart fe-server 
                     pm2 restart http-server 
                     pm2 restart ws-server 
