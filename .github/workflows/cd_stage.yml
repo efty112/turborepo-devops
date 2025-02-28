@@ -22,6 +22,6 @@ jobs:
                 passphrase: ${{ secrets.PASSPHRASE }}
                 script: |
                   cd /home/ubuntu/${{ github.event.repository.name }}/
-                  git pull origin main
+                  git pull origin HEAD
                   npm install -g pnpm && pnpm install && pnpm run build
                   pm2 restart fe-server && pm2 restart http-server && pm2 restart ws-server 
