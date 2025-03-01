@@ -22,7 +22,8 @@ jobs:
                 passphrase: ${{ secrets.PASSPHRASE }}
                 script: |
                   cd /home/ubuntu/${{ github.event.repository.name }}/
-                  git pull
+                  git pull origin main
+                  export PATH=/home/ubuntu/.nvm/versions/node/v22.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
                   sudo npm install -g pnpm
                   pnpm -v
                   pnpm install && pnpm run build
